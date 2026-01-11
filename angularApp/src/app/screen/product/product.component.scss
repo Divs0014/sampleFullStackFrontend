@@ -1,0 +1,50 @@
+.container {
+  padding: 24px;
+}
+
+.toolbar {
+  display: flex;
+  gap: 16px;
+  margin-bottom: 24px;
+  flex-wrap: wrap;
+}
+
+.filter-field {
+  width: 200px;
+}
+
+.card-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 29px;
+
+}
+.brown-fab{
+  background-color: #795548;
+  color: white;
+  mat-icon{
+
+  }
+}
+.brown-fab:hover {
+  background-color: #5d4037;
+}
+.container-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+.overlay {
+  background: #ffffff;
+  width: 75%;
+  height: 75%;
+  overflow-y: auto;
+  border-radius: 12px;
+  padding: 16px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+}

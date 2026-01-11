@@ -1,4 +1,4 @@
-import { CommonModule } from '@angular/common';
+
 import { Component } from '@angular/core';
 interface TodoType{
   Id:number,
@@ -8,7 +8,7 @@ interface TodoType{
 }
 @Component({
   selector: 'app-todo-screen',
-  imports: [CommonModule],
+  imports: [],
   templateUrl: './todo-screen.component.html',
   styleUrl: './todo-screen.component.scss'
 })

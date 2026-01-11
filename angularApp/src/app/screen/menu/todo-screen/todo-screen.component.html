@@ -1,23 +1,24 @@
 <table class="table   table-striped">
-    <thead>
-        <tr>
-            <th>S.No</th>
-            <th>Name</th>
-            <th>Description</th>
-            <th>Time</th>
-        </tr>
-    </thead>
-    
-    <tbody>
-        <tr *ngFor="let row of TodoList">
-           
-            <td>{{row.Id}}</td>
-            <td>{{row.Name}}</td>
-            <td>{{row.Description}} </td>
-            <td>{{row.Date}}</td>
-            <button type="button" class="btn btn-success btn-sm  m-1" (click)="deleteTodo(row.Id)">Delete</button>
-            <button type="button" class="btn btn-success btn-sm  m-1" (click)="updateTodo(row.Id)">Update</button>    
-        </tr>
-        
-    </tbody>
+  <thead>
+    <tr>
+      <th>S.No</th>
+      <th>Name</th>
+      <th>Description</th>
+      <th>Time</th>
+    </tr>
+  </thead>
+
+  <tbody>
+    @for (row of TodoList; track row) {
+      <tr>
+        <td>{{row.Id}}</td>
+        <td>{{row.Name}}</td>
+        <td>{{row.Description}} </td>
+        <td>{{row.Date}}</td>
+        <button type="button" class="btn btn-success btn-sm  m-1" (click)="deleteTodo(row.Id)">Delete</button>
+        <button type="button" class="btn btn-success btn-sm  m-1" (click)="updateTodo(row.Id)">Update</button>
+      </tr>
+    }
+
+  </tbody>
 </table>

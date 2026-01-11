@@ -1,0 +1,51 @@
+<div class="container">
+  <!-- Sort & Filter Bar -->
+  <div class="toolbar">
+    <!-- Category Filter -->
+    <mat-form-field appearance="outline" class="filter-field">
+      <mat-label>Category</mat-label>
+
+      <mat-select (selectionChange)="onCategoryChange($event)">
+        @for(category of CategoryCollections; track category){
+        <mat-option [value]="category">{{ category }}</mat-option>
+        }
+      </mat-select>
+    </mat-form-field>
+
+    <!-- Sort -->
+    <mat-form-field appearance="outline" class="filter-field">
+      <mat-label>Sort By</mat-label>
+      <mat-select  (selectionChange)="onSortChange($event)">
+        @for (key of sortingCollections; track key) {
+        <mat-option [value]="key">
+          {{ key }}
+        </mat-option>
+        }
+      </mat-select>
+    </mat-form-field>
+    <button matFab extended   class="brown-fab"  (click)="openCart()">
+  <mat-icon>shopping_cart</mat-icon>
+  {{productService.totalItems()}}
+  
+</button>
+
+  </div>
+
+  <!-- Product Grid -->
+   @if(isProducts){
+  <div class="card-container">
+    @for (product of products; track product.id) {
+    <app-card [productJson]="product"></app-card>
+    }
+  </div>
+ }
+</div>
+
+@if (openCartDialog) {
+  <div class="container-overlay" (click)="closeCart()">
+    <div class="overlay" (click)="$event.stopPropagation()">
+      <app-cart></app-cart>
+    </div>
+  </div>
+}
+

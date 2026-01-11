@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { RouterLink, RouterLinkActive, RouterOutlet } from '@angular/router';
+import { Router, RouterLink, RouterLinkActive, RouterOutlet } from '@angular/router';
 import { HeaderComponent } from './core/header/header.component';
 
 @Component({
@@ -10,4 +10,12 @@ import { HeaderComponent } from './core/header/header.component';
 })
 export class AppComponent {
   title = 'angularApp';
+   isLoginPage = false;
+
+  constructor(private router: Router) {
+    this.router.events.subscribe(() => {
+    
+      this.isLoginPage = this.router.url === '/';
+    });
+  }
 }

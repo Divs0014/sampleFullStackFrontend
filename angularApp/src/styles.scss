@@ -1,5 +1,48 @@
-/* You can add global styles to this file, and also import other style files */
 
 
 body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
-@import 'bootstrap/scss/bootstrap'
+@import 'bootstrap/scss/bootstrap';
+
+.brown-btn {
+  background-color: #795548; /* Material Brown 500 */
+  color: white;
+}
+
+.brown-btn:hover {
+  background-color: #5d4037;
+}
+
+.brown-btn:disabled {
+  background-color: #bcaaa4;
+  color: #fff;
+}
+
+/* -------- BROWN MATERIAL FAB -------- */
+.brown-fab {
+  background-color: #795548;
+  color: white;
+}
+
+.brown-fab:hover {
+  background-color: #5d4037;
+}
+
+/* Fix FAB shape when Bootstrap is present */
+.mat-mdc-fab,
+.mat-mdc-mini-fab {
+  border-radius: 50%;
+}
+.all-center-flex {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+ 
+}
+.row-direction{
+    flex-direction: column;
+   }
+ :root {
+  --mdc-theme-primary: #0d6efd;   /* blue */
+  --mdc-theme-secondary: #20c997; /* teal / accent */
+  --mdc-theme-error: #dc3545;     /* red */
+}

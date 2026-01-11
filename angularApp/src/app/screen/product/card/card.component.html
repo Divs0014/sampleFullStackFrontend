@@ -1,0 +1,45 @@
+<mat-card style="width:250px; display:flex; flex-direction:column; justify-content:space-between; border-radius:0;">
+  
+  <mat-card-content style="display:flex; flex-direction:column; align-items:center; margin-top:-17px;">
+    <img
+      mat-card-image
+      src="./assets/abc.jpg"
+      style="width:250px;"
+      [alt]="productJson.name"
+    />
+  </mat-card-content>
+
+  <mat-card-header style="align-items:flex-start;">
+    <mat-card-title>{{ productJson.name }}</mat-card-title>
+    <p>Price: {{ productJson.price }}</p>
+  </mat-card-header>
+
+  <mat-card-actions>
+    @if (isInCart()) {
+
+      <button mat-button (click)="removeFromCart()">Remove</button>
+
+      <button mat-icon-button (click)="incrementQuantity()">
+        <mat-icon>add</mat-icon>
+      </button>
+
+      <p style="margin:0;">{{ getQuantity() }}</p>
+
+      <button mat-icon-button (click)="decrementQuantity()">
+        <mat-icon>remove</mat-icon>
+      </button>
+
+    } @else {
+
+      <button mat-button color="primary" (click)="addToCart()">
+        Add To Cart
+      </button>
+
+      <button mat-button color="accent">
+        Details
+      </button>
+
+    }
+  </mat-card-actions>
+
+</mat-card>

@@ -1,0 +1,42 @@
+<div class="cart">
+  <!-- Header -->
+  <div class="cart-header">
+    <h2>Your Cart</h2>
+    <span class="item-count">3 items</span>
+  </div>
+
+  <!-- Cart Items -->
+  <div class="cart-items">
+    @for(item of getCartItems(); track item.id){
+    <div class="cart-item">
+      <img src="https://via.placeholder.com/60" alt="product" />
+ 
+      <div class="item-info">
+        <h4>{{item.name}}</h4>
+     
+      </div>
+
+      <div class="item-actions">
+        <button (click)="decrement(item)">-</button>
+        <span>{{item.quantity}}</span>
+        <button (click)="increment(item)">+</button>
+      </div>
+        <div class="item-actions" >
+          <span>{{item.price}}</span>
+      </div>
+    </div>
+
+    
+  }
+  </div>
+
+  <!-- Footer -->
+  <div class="cart-footer">
+    <div class="total">
+      <span>Total</span>
+      <strong>{{productService.totalSum()}}</strong>
+    </div>
+
+    <button class="checkout-btn">Checkout</button>
+  </div>
+</div>
